@@ -28,7 +28,7 @@
 
 ---
 
-## ⚙️ Build Instrumented JS Shells
+## Build Instrumented JS Shells
 
 ### Safari (WebKit `jsc`)
 ```bash
@@ -68,7 +68,7 @@ cp js/src/js /usr/local/bin/js
 
 ---
 
-## 🔧 Configuration (Optional)
+## Configuration (Optional)
 
 Edit `bandesbahan_fuzzer.py`:
 
@@ -94,7 +94,7 @@ CONTINUOUS_DELAY_SEC    = 3600  # seconds between runs if continuous
 
 ---
 
-## ▶️ Run the Fuzzer
+## Run the Fuzzer
 
 ```bash
 source venv/bin/activate
@@ -107,7 +107,7 @@ python3 bandesbahan_fuzzer.py
 
 ---
 
-## 🕵️ Usage & Expectations
+## Usage
 
 ### Safari (WebKit)
 1. Build/install ASAN `jsc`.  
@@ -147,7 +147,7 @@ python3 bandesbahan_fuzzer.py
 
 ---
 
-## 📝 Sample Output
+##  Output
 
 ```bash
 [*] Loading CodeBERT model…
@@ -180,34 +180,4 @@ python3 bandesbahan_fuzzer.py
 7. **[CRASH‑TID]** – unique crash detected & minimized.  
 8. **Execution complete** – all tests done.
 
----
-
-## 📑 systemd Integration
-
-Save as `/etc/systemd/system/bandesbahan.service`:
-
-```ini
-[Unit]
-Description=bandesbahan Browser Fuzzer
-After=network.target
-
-[Service]
-Type=simple
-WorkingDirectory=/path/to/fuzzer
-ExecStart=/usr/bin/python3 ./bandesbahan_fuzzer.py
-Restart=always
-RestartSec=30
-
-[Install]
-WantedBy=multi-user.target
-```
-
-```bash
-systemctl enable bandesbahan
-systemctl start bandesbahan
-```
-
----
-
-> **Note:** Run only in authorized test environments to avoid unintended crashes.  
-> © 2025 Haroon Ahmad Awan / Omega‑X R&D Division.
+-
