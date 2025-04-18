@@ -23,3 +23,9 @@
    source venv/bin/activate
    pip install --upgrade pip
    pip install torch transformers
+
+
+## Use the .py file and adjust
+# Enable & start
+systemctl enable bandesbahan
+systemctl start bandesbahan
