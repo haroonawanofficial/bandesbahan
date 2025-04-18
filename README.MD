@@ -69,32 +69,6 @@ cp js/src/js /usr/local/bin/js
 
 ---
 
-## Configuration (Optional)
-
-Edit `bandesbahan_fuzzer.py`:
-
-```python
-ENGINES = {
-  "jsc": "/usr/local/bin/jsc",   # Safari WebKit
-  "d8" : "/usr/local/bin/d8",    # Chrome V8
-  "js" : "/usr/local/bin/js",    # Firefox SpiderMonkey
-}
-
-TOTAL_PAYLOADS = 3000     # number of payloads per run
-GEN_THREADS    = 16       # generation threads
-RUN_THREADS    = 8        # execution threads
-TOP_K          = 12       # increase for more mutation diversity
-
-# Optional features:
-FINE_TUNE_MODEL         = False
-FINE_TUNED_MODEL_PATH   = "codebert_finetuned.bin"
-COVERAGE_PRIORITIZATION = False
-CONTINUOUS_MODE         = False
-CONTINUOUS_DELAY_SEC    = 3600  # seconds between runs if continuous
-```
-
----
-
 ## Run the Fuzzer
 
 ```bash
@@ -181,4 +155,4 @@ python3 bandesbahan_fuzzer.py
 7. **[CRASH‑TID]** – unique crash detected & minimized.  
 8. **Execution complete** – all tests done.
 
--
+---
