@@ -1,9 +1,10 @@
-# bandesbahan – AI Browser Fuzzer
+# bandesbahan
 
 **Author:** Haroon Ahmad Awan  
 **Date:** 2025‑04‑18  
 
 **Overview:**
+– AI Browser Fuzzer to find 0 day in browsers
 - Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads  
 - Uses pretrained (and optionally fine‑tuned) CodeBERT for multi‑MASK top‑k substitutions  
 - Runs **parallel generation** (16 threads) and **parallel execution** (8 threads)  
