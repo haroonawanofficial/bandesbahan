@@ -5,22 +5,21 @@
 
 ---
 
-**Overview:**
+## Overview
 - Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads  
 – AI Browser Fuzzer to find 0 day in browsers
 - Runs **parallel generation** (16 threads) and **parallel execution** (8 threads)  
 - Automatically **captures → de‑duplicates → auto‑minimizes** crashes  
 - Supports **coverage‑based prioritization**, **continuous 24×7 loops**, and **systemd integration**  
 
----
 
-**What it finds using fuzzing (potential 0‑day)**  
+## What it finds using fuzzing (potential 0‑day)
 - **Safari (WebKit)**: out‑of‑bounds reads/writes, type‑confusions, use‑after‑free in WebKit and its plugins  
 - **Chrome (V8)**: JIT miscompilations, out‑of‑bounds accesses, garbage‑collector UAF  
 - **Firefox (SpiderMonkey)**: deoptimization bailouts, out‑of‑bounds errors, DOM‑related crashes  
 
 
-## 🛠 Prerequisites
+## Prerequisites
 
 1. **Python 3.9+**  
 2. **Virtual environment** (recommended)  
