@@ -2,7 +2,9 @@
 - Highly Experimental and Fully Automated to fuzzer to find 0day in safari / chrome / firefox
 
 **Author:** Haroon Ahmad Awan
+
 **Date:** 2025‑04‑18  
+
 **Information:**
 - Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads
 - Uses pretrained (and optionally fine‑tuned) CodeBERT for multi‑MASK top‑k substitutions  
