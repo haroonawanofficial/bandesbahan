@@ -21,11 +21,6 @@
    pip install --upgrade pip
    pip install torch transformers
    ```  
-4. **Build sanitized JS shells** with ASAN/UBSAN:  
-   - Safari (WebKit) `jsc`  
-   - Chrome (V8)     `d8`  
-   - Firefox (SpiderMonkey) `js`  
-
 ---
 
 ## What it finds using fuzzing (potential 0‑day)
@@ -34,6 +29,12 @@
 - **Firefox (SpiderMonkey)**: deoptimization bailouts, out‑of‑bounds errors, DOM‑related crashes  
 
 ---
+
+## Build sanitized JS shells** with ASAN/UBSAN:  
+   - Safari (WebKit) `jsc`  
+   - Chrome (V8)     `d8`  
+   - Firefox (SpiderMonkey) `js`  
+
 
 ## Build Instrumented JS Shells
 
