@@ -1,5 +1,5 @@
 # bandesbahan - AI Browser Fuzzer 
-- Highly Experimental and Fully Automated to exploit - safari / chrome / firefox
+- Highly Experimental and Fully Automated to fuzzer to find 0day in safari / chrome / firefox
 
 **Author:** Haroon Ahmad Awan
 **Date:** 2025‑04‑18  
