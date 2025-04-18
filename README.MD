@@ -1,10 +1,10 @@
+# Highly Experimental and Fully Automated to exploit - safari / chrome / firefox
 # bandesbahan - AI Browser Fuzzer 
 
 **Author:** Haroon Ahmad Awan
 **Date:** 2025‑04‑18  
 **Information:**
-
-- Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads  
+- Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads
 - Uses pretrained (and optionally fine‑tuned) CodeBERT for multi‑MASK top‑k substitutions  
 - Runs **parallel generation** (16 threads) and **parallel execution** (8 threads)  
 - Automatically **captures → de‑duplicates → auto‑minimizes** crashes  
