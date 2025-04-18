@@ -2,7 +2,7 @@
 # =============================================================================
 #  bandesbahan – Enterprise‑Grade AI Browser Fuzzer
 #  • Author: Haroon Ahmad Awan
-#  • NG-Design-Code: Fully scalable, Add more templtaes, create unique logics
+#  • NG Code: Fully scalable, Add more templtaes, create unique logics
 # =============================================================================
 #  • Generates 3000+ AI‑mutated JS/HTML/WASM/WebAPI payloads
 #  • Uses pretrained CodeBERT for multi‑MASK top‑k substitution
