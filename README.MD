@@ -1,18 +1,12 @@
 # bandesbahan - AI Browser Fuzzer 
-- Highly Experimental and Fully Automated to fuzzer to find 0day in safari / chrome / firefox
-
 **Author:** Haroon Ahmad Awan
-
 **Date:** 2025‑04‑18  
-
 **Information:**
 - Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads
 - Uses pretrained (and optionally fine‑tuned) CodeBERT for multi‑MASK top‑k substitutions  
 - Runs **parallel generation** (16 threads) and **parallel execution** (8 threads)  
 - Automatically **captures → de‑duplicates → auto‑minimizes** crashes  
 - Supports **coverage‑based prioritization**, **continuous 24×7 loops**, and **systemd integration**  
-
----
 
 ## 🛠 Prerequisites
 
