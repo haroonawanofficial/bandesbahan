@@ -26,10 +26,54 @@
    pip install torch transformers
 
 
-## Use the .py file and adjust
-# Enable & start
-systemctl enable bandesbahan
-systemctl start bandesbahan
+## Build sanitised JavaScript shells
+# 3.1 WebKit jsc
+git clone https://github.com/WebKit/WebKit.git
+cd WebKit
+Tools/Scripts/update-webkitgtk-libs
+Tools/Scripts/build-jsc --jsc-only --release --cmakeargs="-DENABLE_ADDRESS_SANITIZER=ON -DENABLE_UNDEFINED_BEHAVIOR_SANITIZER=ON"
+cp WebKitBuild/*/bin/jsc /usr/local/bin/jsc
+
+# 3.2 Chrome V8 d8
+git clone https://chromium.googlesource.com/v8/v8
+cd v8
+tools/dev/v8gen.py x64.debug.asan
+echo 'is_debug=true
+is_component_build=false
+v8_enable_sandbox=false
+is_asan=true
+v8_static_library=true' > out/x64.debug.asan/args.gn
+ninja -C out/x64.debug.asan d8
+cp out/x64.debug.asan/d8 /usr/local/bin/d8
+
+# 3.3 Firefox SpiderMonkey js
+git clone https://hg.mozilla.org/mozilla-unified spidermonkey
+cd spidermonkey/js/src
+autoconf-2.13
+mkdir build && cd build
+../configure --enable-address-sanitizer --enable-undefined-sanitizer
+make -j$(nproc)
+cp js/src/js /usr/local/bin/js
+
+
+# 4. Edit fuzzer config (optional)
+ENGINES = {
+    "jsc": "/usr/local/bin/jsc",
+    "d8" : "/usr/local/bin/d8",
+    "js" : "/usr/local/bin/js",
+}
+TOTAL_PAYLOADS = 2500          # raise for marathon fuzzing
+THREADS_GEN    = 12            # tweak for CPU count
+THREADS_RUN    = 6
+
+
+# Run the Fuzzer
+source venv/bin/activate
+python3 bandesbahan_fuzzer.py
+
+# Output
+Corpus → bandesbahan_corpus/run_YYYYMMDD_HHMMSS/
+Crashes → bandesbahan_crashes/
 
 
 ### Safari (WebKit) Usage & Expectations
