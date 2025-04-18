@@ -1,9 +1,6 @@
 # bandesbahan
 
 **Author:** Haroon Ahmad Awan  
-**Date:** 2025‑04‑18  
-
----
 
 ## Overview
 - Generates **3000+** AI‑mutated JS/HTML/WASM/WebAPI payloads  
