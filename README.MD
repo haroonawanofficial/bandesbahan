@@ -111,3 +111,40 @@ Crashes → bandesbahan_crashes/
 8. Look for SpiderMonkey‑specific issues: deopt bailouts, OOB, DOM crashes.  
 9. Each crash is minimized to the fewest lines needed to reproduce.  
 10. Debug with `gdb --args js <crash.html>` and run `bt` to view the stack.
+
+
+# Output
+```
+[*] Loading CodeBERT model…
+[+] Model ready.
+[+] Total templates loaded: 1200
+[+] Injected advanced templates: 200, total now: 1400
+
+[+] Starting fuzz run: bandesbahan_corpus/run_20250418_153045
+[GEN-0] generated 100 payloads
+[GEN-1] generated 200 payloads
+…
+[GEN-15] generated 3000 payloads
+[+] Generation complete.
+
+[+] Execution phase: launching 3000 tests across 3 engines
+[CRASH-0] jsc_af3b1c2d.js
+[CRASH-0] d8_4e5f6a7b.js
+[CRASH-1] js_89ab0cde.html
+…
+[+] Execution complete. Crashes stored in: bandesbahan_crashes
+```
+
+**What each line means:**
+
+1. **Loading CodeBERT model** — the AI mutation model is loaded (and optionally fine‑tuned).  
+2. **Template counts** — shows how many base + advanced templates are in use.  
+3. **Starting fuzz run** — the timestamped output folder where payloads and crashes go.  
+4. **\[GEN‑X\] generated N payloads** — progress of the parallel generation threads (every 100 files).  
+5. **Generation complete** — all `TOTAL_PAYLOADS` have been written to disk.  
+6. **Execution phase…** — the fuzzer is now feeding each payload to your JS shells.  
+7. **\[CRASH‑TID\] engine_signature.ext** — a unique crash was detected in engine `jsc`, `d8`, or `js` and saved+minimized.  
+8. **Execution complete** — run finished; all unique crashes are in `bandesbahan_crashes/`.
+
+After this, you can inspect the crash folder and reproduce individual failures in LLDB/GDB as described in the guide.
+
