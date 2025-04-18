@@ -30,13 +30,11 @@
 
 ---
 
-## Build sanitized JS shells** with ASAN/UBSAN:  
+
+## Build Instrumented JS Shells
    - Safari (WebKit) `jsc`  
    - Chrome (V8)     `d8`  
    - Firefox (SpiderMonkey) `js`  
-
-
-## Build Instrumented JS Shells
 
 ### Safari (WebKit `jsc`)
 ```bash
