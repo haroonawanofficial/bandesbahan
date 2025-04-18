@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # =============================================================================
 #  bandesbahan – Enterprise‑Grade AI Browser Fuzzer
+#  • Author: Haroon Ahmad Awan
+#  • NG-Design-Code: Fully scalable, Add more templtaes, create unique logics
 # =============================================================================
 #  • Generates 3000+ AI‑mutated JS/HTML/WASM/WebAPI payloads
 #  • Uses pretrained CodeBERT for multi‑MASK top‑k substitution
@@ -8,7 +10,7 @@
 #  • Crash capture → dedupe → auto‑minimize
 #  • Coverage‑based prioritization (optional)
 #  • Fine‑tune model on historic PoCs (configurable)
-#  • Continuous fuzz loops via cron/systemd (sample provided)
+#  • Continuous fuzz loops via cron/systemd
 #
 #  Requires:
 #    pip install torch transformers
