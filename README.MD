@@ -151,7 +151,7 @@ python3 bandesbahan_fuzzer.py
 ```
 
 **Line meaning:**
-1. **Loading CodeBERT** – AI model initialization.  
+1. **Loading AI** – AI model initialization.  
 2. **Template counts** – core + advanced templates loaded.  
 3. **Starting fuzz run** – output folder timestamp.  
 4. **[GEN‑X] generated N** – generation progress.  
